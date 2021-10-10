@@ -31,7 +31,9 @@ public class NumerosController {
 	})
 	@RequestMapping(value = "/retornarC", method = RequestMethod.GET, produces="application/json")
 	public String terceiroC(@RequestBody BinaryTree arvore, @RequestParam("a") String a, @RequestParam("b") String b) {
-		log.info("Serviço de Terceiro C!");
-		return numerosService.montagem(a, b);
+		log.info("Iniciando serviço de Terceiro C!");
+		String c = numerosService.montagem(a, b);
+		log.info("Valor retornado de C = " + c);
+		return c;
 	}
 }
